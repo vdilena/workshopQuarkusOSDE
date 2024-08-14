@@ -44,7 +44,7 @@ public class PersonResource {
     public Response create(Person person) {
     	
 		personRepository.persist(person);
-        return Response.created(URI.create("/persons/" + person.getId())).build();
+        return Response.ok(person).build();
     }
 
     @PUT
